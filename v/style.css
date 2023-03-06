@@ -1,0 +1,21 @@
+html,
+body {
+  background: black;
+}
+p {
+  color: grey;
+}
+a {
+  color: #4285b4;
+}
+video {
+  max-width: 1200px;
+}
+#video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div {
+  text-align: center;
+}
