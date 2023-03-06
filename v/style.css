@@ -9,6 +9,7 @@ a {
   color: #4285b4;
 }
 video {
+  width: 85vw;
   max-width: 1200px;
 }
 #video {
