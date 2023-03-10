@@ -55,9 +55,12 @@ video {
   </p>
 </div>
 <script>
-var video = document.getElementById("tutorial);
+var video = document.getElementById("tutorial");
 video.autoplay = true;
-video.play();
+video.load();
+video.addEventListener('loadedmetadata', function() {
+  video.play();
+});
 </script>
 </body>
 </html>
