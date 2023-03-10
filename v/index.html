@@ -6,29 +6,58 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+<style>
+html,
+body {
+  background: black;
+}
+p {
+  color: grey;
+}
+a {
+  color: #4285b4;
+}
+video {
+  width: 85vw;
+  max-width: 1200px;
+}
+#video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div {
+  text-align: center;
+}
+</style>
 <img src="https://metrika-informer.com/informer/91153418/1_0_333333FF_333333FF_1_pageviews" style="width:1px; height:1px; border:0;" class="ym-advanced-informer" data-cid="91153418" data-lang="ru" /><script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym"); ym(91153418, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/91153418" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <div class="div">
   <p>включи звук</p>
   <div id="video">
-    <video autoplay="true" loop="true" controls poster="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/poster.png">
-      <source src="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/vp9.webm" type="video/webm; codecs=vp9,opus">
-      <source src="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/avc.mp4" type="video/mp4; codecs=avc1.4D401E,mp4a.40.2">
-      <source src="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/av1.mp4" type="video/mp4; codecs=av01.0.05M.08,mp4a.40.2">
-      <source src="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/av1.webm" type="video/webm; codecs=av01.0.05M.08,opus">
+    <video id="tutorial" autoplay="true" loop="true" controls poster="https://pr0lapse.github.io/v/poster.png">
+      <source src="https://pr0lapse.github.io/v/vp9.webm" type="video/webm; codecs=vp9,opus">
+      <source src="https://pr0lapse.github.io/v/avc.mp4" type="video/mp4; codecs=avc1.4D401E,mp4a.40.2">
+      <source src="https://pr0lapse.github.io/v/av1.mp4" type="video/mp4; codecs=av01.0.05M.08,mp4a.40.2">
+      <source src="https://pr0lapse.github.io/v/av1.webm" type="video/webm; codecs=av01.0.05M.08,opus">
       <p>Твой браузер не поддерживает видео. Посмотри видео-файл локально:
-        <a href="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/avc.mp4">mp4/avc</a> |
-        <a href="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/vp9.webm">webm/vp9</a> |
-        <a href="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/av1.webm">webm/av1</a> |
-        <a href="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/av1.mp4">mp4/av1</a>
+        <a href="https://pr0lapse.github.io/v/avc.mp4">mp4/avc</a> |
+        <a href="https://pr0lapse.github.io/v/vp9.webm">webm/vp9</a> |
+        <a href="https://pr0lapse.github.io/v/av1.webm">webm/av1</a> |
+        <a href="https://pr0lapse.github.io/v/av1.mp4">mp4/av1</a>
       </p>
     </video>
   </div>
   <p>Посмотри видео-файл локально:
-    <a href="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/avc.mp4">mp4/avc</a> |
-    <a href="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/vp9.webm">webm/vp9</a> |
-    <a href="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/av1.webm">webm/av1</a> |
-    <a href="https://github.com/PR0LAPSE/StableDiffusionWebUIColab/raw/main/src/v/av1.mp4">mp4/av1</a>
+    <a href="https://pr0lapse.github.io/v/avc.mp4">mp4/avc</a> |
+    <a href="https://pr0lapse.github.io/v/vp9.webm">webm/vp9</a> |
+    <a href="https://pr0lapse.github.io/v/av1.webm">webm/av1</a> |
+    <a href="https://pr0lapse.github.io/v/av1.mp4">mp4/av1</a>
   </p>
 </div>
+<script>
+var video = document.getElementById("tutorial);
+video.autoplay = true;
+video.play();
+</script>
 </body>
 </html>
