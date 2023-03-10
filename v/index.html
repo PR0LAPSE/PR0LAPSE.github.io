@@ -35,10 +35,10 @@ video {
   <p>включи звук</p>
   <div id="video">
     <video id="tutorial" autoplay="true" loop="true" controls poster="https://pr0lapse.github.io/v/poster.png">
-      <source src="https://pr0lapse.github.io/v/vp9.webm" type="video/webm; codecs=vp9,opus">
-      <source src="https://pr0lapse.github.io/v/avc.mp4" type="video/mp4; codecs=avc1.4D401E,mp4a.40.2">
-      <source src="https://pr0lapse.github.io/v/av1.mp4" type="video/mp4; codecs=av01.0.05M.08,mp4a.40.2">
-      <source src="https://pr0lapse.github.io/v/av1.webm" type="video/webm; codecs=av01.0.05M.08,opus">
+      <source src="https://pr0lapse.github.io/v/vp9.webm" type="video/webm; codecs=vp9">
+      <source src="https://pr0lapse.github.io/v/avc.mp4" type="video/mp4; codecs=avc1.4D401E">
+      <source src="https://pr0lapse.github.io/v/av1.mp4" type="video/mp4; codecs=av01.0.05M.08">
+      <source src="https://pr0lapse.github.io/v/av1.webm" type="video/webm; codecs=av01.0.05M.08">
       <p>Твой браузер не поддерживает видео. Посмотри видео-файл локально:
         <a href="https://pr0lapse.github.io/v/avc.mp4">mp4/avc</a> |
         <a href="https://pr0lapse.github.io/v/vp9.webm">webm/vp9</a> |
@@ -55,12 +55,35 @@ video {
   </p>
 </div>
 <script>
+// поддержка форматов видео
+var video = document.createElement("video");
+if (!video.canPlayType('video/mp4; codecs="avc1.4D401E"') || !video.canPlayType('video/webm; codecs="vp9"') || !video.canPlayType('video/mp4; codecs="av01.0.05M.08"')) {
+  var overlay = document.createElement("div");
+  overlay.innerHTML = '<div style="position: relative; top:260px;"><p>Твой браузер не поддерживает кодеки видео (avc, av1, vp9)</p><p>Посмотри видео-файл локально, скачав по ссылке в нужном кодеке:<br><br><a href="https://pr0lapse.github.io/v/avc.mp4">mp4/avc</a> | <a href="https://pr0lapse.github.io/v/vp9.webm">webm/vp9</a> | <a href="https://pr0lapse.github.io/v/av1.webm">webm/av1</a> | <a href="https://pr0lapse.github.io/v/av1.mp4">mp4/av1</a> </p><br><small><small>или просто установи нормальную современную ОС и браузер</small></small><div>';
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "0";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+  overlay.style.color = "#fff";
+  overlay.style.fontSize = "24px";
+  overlay.style.textAlign = "center";
+  document.body.appendChild(overlay);
+}
+
+//автоплей для поддерживаемых устройств
 var video = document.getElementById("tutorial");
 video.autoplay = true;
 video.load();
 video.addEventListener('loadedmetadata', function() {
   video.play();
+  video.click();
 });
+setTimeout(function() {
+  var element = document.getElementById("tutorial");
+  element.click();
+}, 3000);
 </script>
 </body>
 </html>
