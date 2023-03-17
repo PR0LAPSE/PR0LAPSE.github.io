@@ -63,8 +63,48 @@
 	font-family: sans-serif;
 	fint-size: 20px !important;
 	}
+#search_models_names {
+    position: fixed;
+    z-index: 999999;
+    top:10vh;
+    left: 1050px;
+    background: #181100;
+    color:#fff4db;
+    padding: 10px;
+    border:0px transparent;
+    box-shadow: 0px 0px 10px #8de5ff
+}
 </style>
+<script>
+const searchModelsNames = document.createElement('input');
+searchModelsNames.type = 'text';
+searchModelsNames.placeholder = 'поиск по названиям';
+searchModelsNames.id = "search_models_names";
 
+const colabModelList = document.querySelector('#colab_model_list');
+colabModelList.parentNode.insertBefore(searchModelsNames, colabModelList.nextSibling);
+
+const searchInElements = function(selector, searchText) {
+  const elements = document.querySelectorAll(selector);
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    const text = element.textContent.toLowerCase();
+    if (text.indexOf(searchText.toLowerCase()) !== -1) {
+      // нашли совпадение
+      const topOffset = element.offsetTop;
+      window.scrollTo({ top: topOffset, behavior: 'smooth' });
+      break;
+    }
+  }
+};
+
+searchModelsNames.addEventListener('input', function(event) {
+  const searchText = event.target.value.trim();
+  if (searchText) {
+    searchInElements('#colab_model_list > p > a > b', searchText);
+  }
+});
+</script>
 <div class="colab_model_list" id="colab_model_list"><h2 class="warning">Внимание! Описания давно не дополнялись!<br>Но ты можешь дополнить эту страницу сам.</h2><h4 class="warning_desc">если есть желание помочь себе и другим, напиши в бот или группу этого колаба по ссылкам в подвале: я дам ссылку на текстовый файлик, который ты можешь дополнить в любом текстовом редакторе</h4>
 <h2 class="model_list_header">Описание моделей доступных для выбора в этом Colab</h2>
 <p lang="ru"><a href="https://hаuggingface.co/stabilityai/stable-diffusion-2-1"><b>SD v2.1</b></a>&#160;— это полностью заново обученная StableDiffusion. Устанавливается sd-v2.1-768 и v2.1-512 варианты, последняя идет с модель sd-v2.1-inpainting. Что нового <a href="https://stability.ai/blog/stable-diffusion-v2-release">можно почитать в офф. блоге.</a>&#160;Для 768-модели <b>минимальное разрешение 768×768,</b>&#160;учитывай это! Поскольку токинайзер новый, то старые промпты с 1.5 уже не будут работать как раньше. И самое важное и печальное: из датасета модели было удалено все что связанно с NSFW, так что никаких какашек с дедами, никаких сисек и писек, да и вообще анатомии обнаженного тела — пизда (которой нет)… Но для фотореализма она стала получше, но некоторые ныне живущие художники были удалены. Хорошая новость: стали появляться кастомные модели, которые до обучили на письках.</p>
